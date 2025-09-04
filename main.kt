@@ -3,29 +3,31 @@ enum class Gender {
     MALE
 }
 
-fun main() {
-    
-    val name: String = "Rafael Andres"
-    val lastName: String = "Vargas Mamani"
-    
-    val subject: String = "Aplicaciones mobiles"
-    val weight: Double = 60.3
-    val height: Float = 1.72f
-   	val age: Int = 20
-    val gender: Gender = Gender.MALE
-   
-    val ageIsEven = (age % 2 == 0)
+fun saludar(nombreCompleto: String, saludo: String = "Hola"): String {
+   val saludoCompleto: String = "$saludo, mi nombre es $nombreCompleto"
+   return saludoCompleto
+}
 
-    val greeting: String =
-    """
-    |Hi, mi name is $name $lastName
-    |The subject is $subject
-    |I am $age years old
-    |My weight is $weight kilos
-    |I am $height centimeters tall
-    |And my age is ${if (ageIsEven) "even" else "odd"}
-   	|My gender is ${gender.name.lowercase()}
-    """.trimMargin()
+fun obtenerGenero(genero: Gender): String {
     
-    println(greeting)
+    var mensaje: String = "Mi genero es "
+    
+    when(genero) {
+        Gender.FEMALE -> mensaje += "Femenino"
+        Gender.MALE -> mensaje += "Masculino"
+    }
+    
+    return mensaje
+}
+
+fun main() {
+    val saludo: String = "Bienvenido a la materia de aplicaciones moviles"
+    val nombreCompleto: String = "Rafael Andres Vargas Mamani"
+    val genero: Gender = Gender.MALE
+    
+    println(saludar(nombreCompleto = nombreCompleto, saludo = saludo))
+    println(obtenerGenero(genero = genero))
+    
+    
+    println(saludar(nombreCompleto = nombreCompleto))
 }
