@@ -3,7 +3,7 @@ enum class Gender {
     MALE
 }
 
-fun saludar(nombreCompleto: String, saludo: String = "Hola"): String {
+fun saludar(nombreCompleto: String, saludo: String = "Hola"): Unit {
    val saludoCompleto: String = "$saludo, mi nombre es $nombreCompleto"
    println(saludoCompleto)
 }
@@ -29,5 +29,5 @@ fun main() {
     println(obtenerGenero(genero = genero))
     
     
-    println(saludar(nombreCompleto = nombreCompleto))
+    saludar(nombreCompleto = nombreCompleto)
 }
