@@ -31,6 +31,6 @@ fun main() {
     //return -> "Mi genero es Masculino"
     println(obtenerGenero(genero = genero))
     
-    //return -> "Hola, mi nombre es Rafael Andres Vargas Mamani"
+    //print -> "Hola, mi nombre es Rafael Andres Vargas Mamani"
 	saludar(nombreCompleto = nombreCompleto)
 }
